@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Офромление Заказа</title>
+  <title>Оформление Заказа</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <style>
     body {
@@ -17,23 +17,6 @@
       min-height: 100vh;
       overflow-y: scroll;
     }
-    select {
-  width: 100%;
-  padding: 10px;
-  font-size: 18px;
-  border: 1px solid var(--tg-theme-hint-color);
-  border-radius: 5px;
-  background-color: var(--tg-theme-bg-color);
-  color: var(--tg-theme-text-color);
-  margin-top: 10px;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23666" d="M7 10l5 5 5-5z"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 24px;
-}
     form {
       display: flex;
       flex-direction: column;
@@ -42,7 +25,7 @@
     label {
       margin-top: 20px;
     }
-    input[type="date"], select {
+    input, select {
       margin-top: 10px;
       padding: 10px;
       font-size: 18px;
@@ -84,32 +67,21 @@
 <body>
   <form id="my-form">
     <label for="from">Откуда:</label>
-    <select id="from" name="from">
-      <option value="">Выберите город отправления</option>
-  <option value="Киргиз-Мияки">Киргиз-Мияки</option>
-  <option value="Уфа">Уфа</option>
-  <option value="Стерлитамак">Стерлитамак</option>
-  <option value="Оренбург">Оренбург</option>
-  <option value="Стерлибашево">Стерлибашево</option>
-  <option value="Шарлык">Шарлык</option>
-  <option value="Аксеново">Аксеново</option>
-  <option value="Раевка">Раевка</option>
-  <option value="Чишмы">Чишмы</option>
-    </select>
+    <input list="cities" id="from" name="from" placeholder="Выберите город отправления">
+    <datalist id="cities">
+      <option value="Киргиз-Мияки">
+      <option value="Уфа">
+      <option value="Стерлитамак">
+      <option value="Оренбург">
+      <option value="Стерлибашево">
+      <option value="Шарлык">
+      <option value="Аксеново">
+      <option value="Раевка">
+      <option value="Чишмы">
+    </datalist>
 
     <label for="to">Куда:</label>
-    <select id="to" name="to">
-      <option value="">Выберите город прибытия</option>
-  <option value="Киргиз-Мияки">Киргиз-Мияки</option>
-  <option value="Уфа">Уфа</option>
-  <option value="Стерлитамак">Стерлитамак</option>
-  <option value="Оренбург">Оренбург</option>
-  <option value="Стерлибашево">Стерлибашево</option>
-  <option value="Шарлык">Шарлык</option>
-  <option value="Аксеново">Аксеново</option>
-  <option value="Раевка">Раевка</option>
-  <option value="Чишмы">Чишмы</option>
-    </select>
+    <input list="cities" id="to" name="to" placeholder="Выберите город прибытия">
 
     <label for="date">Дата:</label>
     <input type="date" id="date" name="date" placeholder="Выберите дату" required>
